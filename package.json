@@ -1,0 +1,12 @@
+{
+  "name": "sinonjs_use",
+  "description": "Example sinonjs use.",
+  "scripts": {
+    "tests": "mocha server_side/specs --require server_side/specs/helpers/chai.js --reporter spec"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4"
+  }
+}
