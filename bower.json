@@ -1,0 +1,22 @@
+{
+  "name": "sinonjs_use",
+  "description": "Example sinonjs use.",
+  "main": "js/application.js",
+  "authors": [
+    "_meugen_ <eugen35@mail.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "chai": "^3.5.0",
+    "sinon": "^1.17.4"
+  }
+}
