@@ -8,12 +8,12 @@
     "chai": "^3.5.0",
     "karma": "^1.0.0",
     "karma-bdd-using": "^0.1.0",
+    "karma-chai-sinon": "^0.1.5",
     "karma-chrome-launcher": "^1.0.1",
-    "karma-cli": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-phantomjs-launcher": "^1.0.1",
-    "karma-sinon-chai": "^1.2.0",
     "mocha": "^2.5.3",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
   }
 }
