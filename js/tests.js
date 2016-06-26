@@ -1,5 +1,17 @@
 //@todo Нужно ещё показать sinon в действии
 
+describe("ES6", function() {
+    let { title } = {
+        title: "Меню",
+        width: 100,
+        height: 200
+    };
+
+    it("Деструктуризация работает", function() {
+        assert.equal( title, "Меню" );
+    });
+})
+
 describe("pow", function() {
 
     describe("возводит x в степень n", function() {

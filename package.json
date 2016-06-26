@@ -2,7 +2,7 @@
   "name": "sinonjs_use",
   "description": "Example sinonjs use.",
   "scripts": {
-    "tests": "mocha server_side/specs --require server_side/specs/helpers/chai.js --reporter spec"
+    "tests": "mocha --compilers js:babel-register server_side/specs --require server_side/specs/helpers/chai.js --reporter spec --harmony || exit 0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -10,6 +10,7 @@
     "karma-bdd-using": "^0.1.0",
     "karma-chai-sinon": "^0.1.5",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-phantomjs-launcher": "^1.0.1",
     "mocha": "^2.5.3",
