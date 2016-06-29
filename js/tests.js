@@ -1,5 +1,7 @@
 //@todo Нужно ещё показать sinon в действии
 
+//import Paginator from './paginationAndScroll/Paginator'
+
 describe("ES6", function() {
     let { title } = {
         title: "Меню",

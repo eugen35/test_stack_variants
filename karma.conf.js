@@ -10,12 +10,14 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai-sinon'],
+    frameworks: ['mocha', 'chai-sinon', 'commonjs'],
 
 
     // list of files / patterns to load in the browser
-    files: [
+    files: [      
       'node_modules/babel-polyfill/dist/polyfill.js',
+      'js/paginationAndScroll/PartListViewer.js',
+      'js/paginationAndScroll/Paginator.js',
       'js/application.js',
       'js/tests.js'
     ],
@@ -29,7 +31,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'js/*.js': ['babel']
+      'js/**/*.js': ['commonjs', 'babel']
     },
 
     babelPreprocessor: {
@@ -70,7 +72,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
