@@ -1,6 +1,15 @@
 //@todo Нужно ещё показать sinon в действии
 
-//import Paginator from './paginationAndScroll/Paginator'
+
+import pow from './application'
+import Paginator from './paginationAndScroll/Paginator'
+
+let paginator = new Paginator({
+  currentPageNumber: 1, 
+  pagesCount: 2, 
+  recordsCount: 100,
+  currentPageRecordsCount: 50  
+})
 
 describe("ES6", function() {
     let { title } = {
@@ -12,6 +21,15 @@ describe("ES6", function() {
     it("Деструктуризация работает", function() {
         assert.equal( title, "Меню" );
     });
+
+    it("Пагинатор работает", function() {
+      assert.equal( paginator.pagesCount, 2 );
+    });
+
+  it("Пагинатор имеет и родительские свойства", function() {
+    assert.equal( paginator.currentPageRecordsCount, 50 );
+  });
+  
 })
 
 describe("pow", function() {
