@@ -7,7 +7,7 @@ export default class Paginator extends PartListViewer {
     this.currentPageNumber = currentPageNumber
     this.recordsCount = recordsCount    
     if (undefined == pagesCount && undefined != recordsCount) {
-      this.pagesCount = Math.ceil( recordsCount / this.currentPageRecords )
+      this.pagesCount = Math.ceil( recordsCount / this.currentPageRecordsCount )
     } else {
       this.pagesCount = pagesCount
     }

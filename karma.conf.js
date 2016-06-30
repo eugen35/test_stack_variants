@@ -18,7 +18,8 @@ module.exports = function(config) {
       'js/paginationAndScroll/PartListViewer.js',
       'js/paginationAndScroll/Paginator.js',
       'js/application.js',
-      'js/tests.js'
+      'js/tests.js',
+      'js/tests/paginationAndScroll/Paginator.js'
     ],
 
 
@@ -65,7 +66,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
