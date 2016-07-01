@@ -2,7 +2,7 @@ import Paginator from '../../paginationAndScroll/Paginator'
 
 
 
-describe("1: Число страниц, число записей на странице", function() {
+describe("1: Создание объекта", function() {
 
   it("1.1: Пагинатор может рассчитать pagesCount, если известен recordsCount", function() {
     let paginator = new Paginator({
@@ -21,8 +21,21 @@ describe("1: Число страниц, число записей на стра�
     expect(paginator.pagesCount).to.be.undefined
   })
 
-  it.skip("1.3: Пагинатор бросает ошибку, если recordsCount, делённый на currentPageRecordsCount, не будет равен значению pagesCount, заданному при инициализации", function() {
+  //@todo Переименовать currentPageRecordsCount в pageRecordsCount
+  it.skip("1.3: Если не указано pageRecordsCount, то берётся значение по умолчанию - 40 записей", function() {
     
   })
   
+  it.skip("1.4: Пагинатор бросает ошибку, если recordsCount, делённый на currentPageRecordsCount, не будет равен значению pagesCount, заданному при инициализации", function() {
+    
+  })
+  
+})
+
+describe("2: Основные методы", function() {
+
+  it("2.1: При нажати", function() {
+    
+  })
+
 })

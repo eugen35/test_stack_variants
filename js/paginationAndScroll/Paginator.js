@@ -12,4 +12,14 @@ export default class Paginator extends PartListViewer {
       this.pagesCount = pagesCount
     }
   }
+
+  //@todo нужно наверное везде реализовать чэйнинг? Или не нужно этого для пагинатора?
+  nextPage(){
+    this.remoteSource.giveRecords({startRecordNumber: ??, recordsCount: this.pageRecordsCount})
+  }
+
+  previsiousPage(){}
+
+  toPageNumber(pageNumber){}
+
 }
