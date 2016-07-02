@@ -1,9 +1,12 @@
 export default class PartListViewer {
-  constructor({ remoteSource, hashedRecords, currentPageRecords, currentPageRecordsCount, sort, filter, user }) {
+  constructor({ remoteSource, hashedRecords, currentPage, pageRecordsCount, sort, filter, user }) {
     this.remoteSource = remoteSource
     this.hashedRecords = hashedRecords
-    this.currentPageRecords = currentPageRecords
-    this.currentPageRecordsCount = currentPageRecordsCount
+    
+    this.pages = {}
+    this.currentPage = currentPage
+    this.pageRecordsCount = pageRecordsCount
+    
     this.sort = sort
     this.filter = filter
     this.user = user

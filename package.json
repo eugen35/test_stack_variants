@@ -5,6 +5,7 @@
     "tests": "mocha --compilers js:babel-register server_side/specs --require server_side/specs/helpers/chai.js --reporter spec --harmony || exit 0"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "karma": "^1.0.0",

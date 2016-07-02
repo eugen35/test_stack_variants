@@ -18,7 +18,7 @@ module.exports = function(config) {
       'js/paginationAndScroll/PartListViewer.js',
       'js/paginationAndScroll/Paginator.js',
       'js/application.js',
-      'js/tests.js',
+      //'js/tests.js',
       'js/tests/paginationAndScroll/Paginator.js'
     ],
 

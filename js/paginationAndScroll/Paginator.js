@@ -15,11 +15,33 @@ export default class Paginator extends PartListViewer {
 
   //@todo нужно наверное везде реализовать чэйнинг? Или не нужно этого для пагинатора?
   nextPage(){
-    this.remoteSource.giveRecords({startRecordNumber: ??, recordsCount: this.pageRecordsCount})
+    this.toPageNumber(this.currentPageNumber+1)
+    return this
   }
 
-  previsiousPage(){}
+  previsiousPage(){
+    this.toPageNumber(this.currentPageNumber-1)
+    return this
+  }
 
-  toPageNumber(pageNumber){}
-
+  toPageNumber(pageNumber){    
+    console.log('Меня вызвали')
+    if (!this.isCorrectPageNumber(pageNumber)) return this
+    console.log('И вышло')
+    this.currentPageNumber = pageNumber
+    if (this.pages.hasOwnProperty(this.currentPageNumber)) {
+      this.currentPage = this.pages[this.currentPageNumber]
+      return this
+    } else {
+      //this.pages = 
+      //this.currentPage = this.pages[this.currentPageNumber]
+      return this
+    }
+  }
+  
+  isCorrectPageNumber(pageNumber) {
+    //(pageNumber ^ 0) === pageNumber - проверка на целое число. (pageNumber ^ 0) в скобках - это потому, что приоритет операции ^ очень низкий. Если не поставить скобку, то === сработает раньше.
+    return (undefined != this.pagesCount && this.pagesCount < pageNumber || 1 > pageNumber || (pageNumber ^ 0) === pageNumber)
+  }
+  
 }

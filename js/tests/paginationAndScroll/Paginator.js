@@ -34,8 +34,15 @@ describe("1: Создание объекта", function() {
 
 describe("2: Основные методы", function() {
 
-  it("2.1: При нажати", function() {
-    
+  it("2.1: Перейти на следующую страницу", function() {
+    let paginator = new Paginator({
+      currentPageNumber: 1,
+      recordsCount: 100,
+      pageRecordsCount: 50
+    })
+    paginator.pages[2] = ['Мария', 'Клава', 'Галя']
+    paginator.toPageNumber(2)
+    expect(paginator.currentPageNumber).to.equal(2)
   })
 
 })
