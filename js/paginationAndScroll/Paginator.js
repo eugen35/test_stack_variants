@@ -41,7 +41,12 @@ export default class Paginator extends PartListViewer {
   
   isCorrectPageNumber(pageNumber) {
     //(pageNumber ^ 0) === pageNumber - проверка на целое число. (pageNumber ^ 0) в скобках - это потому, что приоритет операции ^ очень низкий. Если не поставить скобку, то === сработает раньше.
-    return (undefined != this.pagesCount && this.pagesCount < pageNumber || 1 > pageNumber || (pageNumber ^ 0) === pageNumber)
+    switch (true) {
+      case (!Number.isInteger(pageNumber))                                          : return false //если не является целым числом
+      case (1 > pageNumber)                                                 : return false //если 0 или меньше
+      case (undefined != this.pagesCount && this.pagesCount < pageNumber)   : return false //если больше числа страниц (если оно задано)
+      default                                                               : return true
+    }
   }
   
 }
