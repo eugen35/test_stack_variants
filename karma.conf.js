@@ -9,16 +9,13 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai-sinon', 'commonjs'],
+    frameworks: ['mocha', 'chai-sinon'],
 
 
     // list of files / patterns to load in the browser
     files: [      
-      'node_modules/babel-polyfill/dist/polyfill.js',
-      'js/paginationAndScroll/PartListViewer.js',
-      'js/paginationAndScroll/Paginator.js',
-      'js/application.js',
-      //'js/tests.js',
+      //'node_modules/babel-polyfill/dist/polyfill.js',
+      'js/tests.js',
       'js/tests/paginationAndScroll/Paginator.js'
     ],
 
@@ -31,13 +28,22 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'js/**/*.js': ['babel', 'webpack', 'coverage']
+      'js/**/*.js': ['webpack', 'coverage']
     },
 
-    babelPreprocessor: {
-      options: {
-        presets: ['es2015'],
-        sourceMap: 'inline'
+    webpack: {
+      // karma watches the test entry points
+      // (you don't need to specify the entry option)
+      // webpack watches dependencies
+
+      // webpack configuration
+      module: {
+        loaders: [{
+          // => babel-loader is used for ".js" files
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        }]
       }
     },
 
@@ -75,7 +81,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
