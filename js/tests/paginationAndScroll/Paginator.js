@@ -5,7 +5,7 @@ let paginator
 
 describe("1: Создание объекта", function() {
 
-  it("1.1: Пагинатор может рассчитать pagesCount, если известен recordsCount", function() {
+  it.skip("1.1: Пагинатор может рассчитать pagesCount, если известен recordsCount", function() {
     let paginator = new Paginator({
       currentPageNumber: 1,      
       recordsCount: 100,
